@@ -7,15 +7,11 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+      content="width=device-width, initial-scale=1.0"
     />
-    <meta
-      name="theme-color"
-      content="#6e2b43"
-    />
-    <title>دعوة زفاف ليان وجون سينا</title>
+    <title>دعوة زفاف | ليان & جون سينا</title>
 
-    <!-- خطوط عربية ملكية فائقة الأنوثة -->
+    <!-- الخطوط المعتمدة -->
     <link
       rel="preconnect"
       href="https://fonts.googleapis.com"
@@ -26,895 +22,940 @@
       crossorigin
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=El+Messiri:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap"
       rel="stylesheet"
     />
 
     <style>
       :root {
-        --wine: #6e2b43;
-        --wine-dark: #4b1528;
-        --rose-gold: #c38870;
-        --gold: #c5a064;
-        --gold-light: #f3dfb4;
-        --blush: #fdf2f4;
-        --blush-accent: #f8e1e5;
-        --ink: #553540;
-        --muted: #8b6b75;
-        --paper: #ffffff;
-        --border-gold: rgba(197, 160, 100, 0.42);
-        --shadow: 0 14px 40px rgba(110, 43, 67, 0.12);
+        --primary-rose: #9e4359;
+        --soft-rose: #d89aa8;
+        --gold: #c59b27;
+        --envelope-base: #f3ede2;
+        --envelope-inside: #e2d7c5;
+        --card-bg: rgba(255, 255, 255, 0.94);
+        --text-dark: #3a2e2b;
+        --text-muted: #6e5e59;
       }
 
       * {
-        box-sizing: border-box;
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
         -webkit-tap-highlight-color: transparent;
       }
-      html {
-        scroll-behavior: smooth;
-        background: #fff5f6;
-      }
+
       body {
+        font-family: "Amiri", serif;
+        background-color: #faf6f0;
+        background-image: url("https://invitations-a8x.pages.dev/demo/amalfi-rose/background.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: var(--text-dark);
         min-height: 100vh;
-        background: radial-gradient(
-          circle at 50% 0%,
-          #ffffff 0%,
-          #fff4f6 40%,
-          #f6e2e6 100%
-        );
-        color: var(--ink);
-        font-family: "El Messiri", "Tahoma", serif;
         overflow-x: hidden;
-        position: relative;
-      }
-
-      /* إطار زخرفي محيط بالشاشة */
-      body:before {
-        content: "";
-        position: fixed;
-        inset: 7px;
-        border: 1px solid rgba(197, 160, 100, 0.3);
-        border-radius: 22px;
-        pointer-events: none;
-        z-index: 15;
-      }
-
-      /* ذرات بريق ذهبية متطايرة بنعومة */
-      .sparkles {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        overflow: hidden;
-        z-index: 1;
-      }
-      .sparkles i {
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: var(--gold);
-        border-radius: 50%;
-        opacity: 0.55;
-        box-shadow: 0 0 10px #dfba79;
-        animation: floatUp 11s linear infinite;
-      }
-      @keyframes floatUp {
-        0% {
-          transform: translateY(105vh) scale(0.4);
-          opacity: 0;
-        }
-        20% {
-          opacity: 0.7;
-        }
-        80% {
-          opacity: 0.6;
-        }
-        100% {
-          transform: translateY(-10vh) scale(0.8);
-          opacity: 0;
-        }
-      }
-
-      /* ----------------------------------------------------
-   1. شاشة البداية مع الفيديو الأصلي
----------------------------------------------------- */
-      .video-intro {
-        position: fixed;
-        inset: 0;
-        z-index: 60;
-        display: grid;
-        place-items: center;
-        background: #faeff2;
-        transition:
-          opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1),
-          visibility 0.85s ease;
-      }
-      .video-intro.is-hidden {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-      }
-      .intro-video {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        background: #faeff2 url("img.png") center / cover no-repeat;
-      }
-      .intro-shade {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          180deg,
-          rgba(75, 21, 40, 0.42) 0%,
-          rgba(110, 43, 67, 0.45) 50%,
-          rgba(45, 12, 24, 0.8) 100%
-        );
-      }
-      .intro-content {
-        position: relative;
-        z-index: 2;
-        padding: 25px;
-        text-align: center;
-        color: #fff;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 16px;
-        animation: floatBreath 3s ease-in-out infinite alternate;
-      }
-      .intro-content.is-hidden {
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.35s ease;
-      }
-      .intro-content p {
-        font-family: "Amiri", serif;
-        font-size: 32px;
-        letter-spacing: 1.5px;
-        text-shadow: 0 3px 14px rgba(0, 0, 0, 0.65);
-      }
-      .open-invite {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.95);
-        border-radius: 50px;
-        padding: 14px 36px;
-        background: rgba(255, 255, 255, 0.32);
-        color: #fff;
-        font-size: 15.5px;
-        font-weight: 600;
-        cursor: pointer;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-        animation: pulseBtn 2.2s infinite;
-        transition: transform 0.2s ease;
-      }
-      .open-invite:active {
-        transform: scale(0.96);
       }
 
-      @keyframes pulseBtn {
-        0%,
-        100% {
-          box-shadow: 0 8px 25px rgba(248, 225, 229, 0.5);
-          transform: scale(1);
-        }
-        50% {
-          box-shadow: 0 12px 35px rgba(248, 225, 229, 0.85);
-          transform: scale(1.03);
-        }
-      }
-      @keyframes floatBreath {
-        from {
-          transform: translateY(0);
-        }
-        to {
-          transform: translateY(-7px);
-        }
-      }
-
-      /* ----------------------------------------------------
-   2. كارد الدعوة الملكي المباشر (UI فائق الرقة)
----------------------------------------------------- */
-      .main-wrap {
-        position: relative;
-        z-index: 10;
-        width: min(100%, 420px);
-        margin: auto;
-        padding: 30px 14px 75px;
-        opacity: 0;
-        transform: translateY(30px) scale(0.98);
-        transition:
-          opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-          transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .main-wrap.is-visible {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-
-      .invitation-card {
-        position: relative;
-        padding: 38px 22px 34px;
-        background: #ffffff;
-        border: 1px solid var(--border-gold);
-        border-radius: 12px;
-        box-shadow: var(--shadow);
-        text-align: center;
+      /* حاوية تساقط البتلات */
+      #petal-container {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1200;
         overflow: hidden;
       }
 
-      /* إطار داخلي رفيع مذهب */
-      .invitation-card:before {
-        content: "";
+      .petal {
         position: absolute;
-        inset: 8px;
-        border: 1px solid rgba(197, 160, 100, 0.35);
+        background-size: contain;
+        background-repeat: no-repeat;
+        will-change: transform, opacity;
+        animation: fall linear forwards;
+      }
+
+      @keyframes fall {
+        0% {
+          top: -10%;
+          opacity: 0;
+          transform: translateX(0) rotate(0deg) scale(0.7);
+        }
+        15% {
+          opacity: 0.95;
+        }
+        85% {
+          opacity: 0.95;
+        }
+        100% {
+          top: 105%;
+          opacity: 0;
+          transform: translateX(140px) rotate(540deg) scale(1.1);
+        }
+      }
+
+      /* --------------------------------------------------
+           الظرف الواقعي الفاخر (Ultra-Realistic Envelope)
+        --------------------------------------------------- */
+      #envelope-stage {
+        position: fixed;
+        inset: 0;
+        background: rgba(250, 246, 240, 0.96)
+          url("https://invitations-a8x.pages.dev/demo/amalfi-rose/background.jpg")
+          center/cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+        perspective: 1500px;
+        transition:
+          opacity 1.2s ease,
+          visibility 1.2s;
+      }
+
+      #envelope-stage.fade-out {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .envelope-container {
+        position: relative;
+        width: 330px;
+        height: 230px;
+        background: var(--envelope-inside);
         border-radius: 8px;
+        box-shadow: 0 25px 50px rgba(74, 52, 45, 0.35);
+        cursor: pointer;
+        transform-style: preserve-3d;
+        transition: transform 0.4s ease;
+      }
+
+      .envelope-container:hover {
+        transform: translateY(-5px);
+      }
+
+      /* بطاقة المعاينة الداخلية */
+      .card-preview {
+        position: absolute;
+        bottom: 5px;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+        background: #fff;
+        border-radius: 6px;
+        border: 1px solid rgba(197, 155, 39, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+        transition: transform 0.9s 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .envelope-container.open .card-preview {
+        transform: translateY(-90px);
+      }
+
+      /* الجيب الأيسر */
+      .pocket-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #e9e0d2;
+        clip-path: polygon(0 0, 50% 50%, 0 100%);
+        z-index: 3;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        filter: drop-shadow(2px 0 3px rgba(0, 0, 0, 0.04));
+      }
+
+      /* الجيب الأيمن */
+      .pocket-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: #e9e0d2;
+        clip-path: polygon(100% 0, 50% 50%, 100% 100%);
+        z-index: 3;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        filter: drop-shadow(-2px 0 3px rgba(0, 0, 0, 0.04));
+      }
+
+      /* الجيب السفلي الأساسي */
+      .pocket-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, #ded4c3, #eee6d9);
+        clip-path: polygon(0 100%, 50% 48%, 100% 100%);
+        z-index: 4;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      /* الغطاء العلوي الواقعي مع الظل */
+      .flap-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, #ded4c3, #ece3d6);
+        clip-path: polygon(0 0, 50% 55%, 100% 0);
+        transform-origin: top center;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12));
+      }
+
+      .envelope-container.open .flap-top {
+        transform: rotateX(180deg);
+        z-index: 1;
+      }
+
+      /* ختم الشمع */
+      .wax-seal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 92px;
+        height: 92px;
+        z-index: 6;
+        filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.3));
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
+        animation: pulse-seal 2.2s infinite ease-in-out;
+      }
+
+      @keyframes pulse-seal {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(1.06);
+        }
+      }
+
+      .envelope-container.open .wax-seal {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.3);
+      }
+
+      /* العبارة المكتوبة على الظرف نفسه */
+      .on-envelope-text {
+        position: absolute;
+        bottom: 12px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-family: "Aref Ruqaa", serif;
+        font-size: 1.05rem;
+        color: var(--primary-rose);
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        z-index: 7; /* فوق طيات الظرف ليظهر بوضوح */
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
         pointer-events: none;
       }
 
-      .top-tag {
-        display: inline-block;
-        font-size: 11.5px;
-        letter-spacing: 2px;
-        color: #9b7244;
-        margin-bottom: 12px;
-        padding: 6px 18px;
-        border: 1px solid rgba(197, 160, 100, 0.4);
-        border-radius: 50px;
-        background: #fffcf9;
+      /* تختفي الكتابة فوراً بمجرد النقر */
+      .envelope-container.open .on-envelope-text {
+        opacity: 0 !important;
+        transform: scale(0.9);
       }
 
-      .ornament {
-        color: var(--gold);
-        font-size: 22px;
-        letter-spacing: 6px;
-        margin: 4px 0 12px;
-        animation: heartBeat 3s infinite;
+      /* زر الموسيقى */
+      .music-btn {
+        position: fixed;
+        top: 25px;
+        left: 25px;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid var(--gold);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1100;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6px);
+      }
+
+      .music-btn svg {
+        width: 20px;
+        height: 20px;
+        fill: var(--primary-rose);
+      }
+
+      .music-btn.playing svg {
+        animation: rotate-music 4s linear infinite;
+      }
+
+      @keyframes rotate-music {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* مؤشر التمرير التلقائي */
+      .scroll-indicator {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid var(--gold);
+        color: var(--primary-rose);
+        padding: 8px 18px;
+        border-radius: 25px;
+        font-size: 0.85rem;
+        font-weight: bold;
+        display: none;
+        align-items: center;
+        gap: 6px;
+        z-index: 1100;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        display: none;
+      }
+
+      .scroll-indicator.active {
+        display: none;
+        opacity: 1;
+      }
+
+      /* البطاقة الرئيسية وأقسامها */
+      .main-container {
+        width: 100%;
+        max-width: 520px;
+        padding: 25px 15px 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .card-box {
+        background: var(--card-bg);
+        border-radius: 18px;
+        border: 1px solid rgba(197, 155, 39, 0.28);
+        box-shadow: 0 12px 30px rgba(90, 74, 66, 0.08);
+        backdrop-filter: blur(10px);
+        position: relative;
+        padding: 45px 24px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.9s ease,
+          transform 0.9s ease;
+      }
+
+      .hero-card {
+        overflow: hidden;
+      }
+
+      .card-box.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .floral-corner {
+        position: absolute;
+        width: 140px;
+        pointer-events: none;
+        opacity: 0.92;
+      }
+
+      .top-right {
+        top: -15px;
+        right: -15px;
+      }
+
+      .bottom-left {
+        bottom: -15px;
+        left: -15px;
+        transform: rotate(180deg);
+      }
+
+      .small-rose {
+        width: 75px;
+        margin: 10px auto;
+        display: block;
       }
 
       .bismillah {
-        font-family: "Amiri", serif;
-        font-size: 20px;
-        color: #8c6332;
-        margin-bottom: 16px;
+        font-family: "Aref Ruqaa", serif;
+        font-size: 1.5rem;
+        color: var(--primary-rose);
+        margin-bottom: 20px;
       }
 
-      .heading-story {
-        font-family: "Amiri", serif;
-        font-size: clamp(26px, 7vw, 34px);
-        color: var(--wine);
-        line-height: 1.45;
-        margin-bottom: 15px;
+      .names-box {
+        margin: 25px 0;
+      }
+
+      .name {
+        font-family: "Aref Ruqaa", serif;
+        font-size: 3.3rem;
+        color: var(--primary-rose);
         font-weight: 700;
-      }
-      .heading-story em {
-        font-style: normal;
-        color: var(--rose-gold);
-        display: inline-block;
-        position: relative;
-      }
-      .heading-story em:after {
-        content: "";
-        display: block;
-        width: 75%;
-        height: 1px;
-        margin: 3px auto 0;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          var(--gold),
-          transparent
-        );
+        line-height: 1.25;
       }
 
-      .poetic-p {
-        font-size: 14.5px;
-        line-height: 2.2;
-        color: #64444f;
-        margin: 0 auto 16px;
+      .and-symbol {
+        font-family: "Great Vibes", cursive;
+        font-size: 3rem;
+        color: var(--gold);
+        display: block;
+        margin: -8px 0;
       }
 
       .divider {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        justify-content: center;
-        color: var(--gold);
-        margin: 20px auto;
-      }
-      .divider:before,
-      .divider:after {
-        content: "";
-        height: 1px;
-        width: 65px;
+        width: 130px;
+        height: 1.5px;
         background: linear-gradient(
           90deg,
           transparent,
           var(--gold),
           transparent
         );
+        margin: 25px auto;
       }
 
-      .invite-lead {
-        font-size: 12.5px;
-        letter-spacing: 2px;
-        color: #9f7542;
-        margin-top: 8px;
+      .love-quote {
+        font-size: 1.35rem;
+        line-height: 2.1;
+        color: #483935;
       }
 
-      .names-wrap {
-        margin: 12px 0 16px;
-      }
-      .couple-name {
-        font-family: "Amiri", serif;
-        font-size: clamp(38px, 10vw, 50px);
-        font-weight: 700;
-        color: var(--wine);
-        line-height: 1.25;
-      }
-      .heart-connector {
-        font-size: 22px;
-        color: var(--rose-gold);
-        margin: 4px 0;
-        display: inline-block;
-        animation: heartBeat 2s infinite ease-in-out;
-      }
-      @keyframes heartBeat {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.15);
-        }
-      }
-
-      .poetic-quote {
-        font-family: "Amiri", serif;
-        font-size: 17.5px;
-        line-height: 2.15;
-        color: #7a4655;
-        margin: 16px auto 20px;
-        padding: 14px 12px;
-        background: #fffbfa;
-        border-radius: 8px;
-        border-right: 2px solid var(--gold);
-        border-left: 2px solid var(--gold);
-      }
-
-      /* قسم التاريخ الملكي */
-      .date-section {
-        margin: 22px 0 16px;
-      }
-      .date-highlight {
-        font-family: "Amiri", Georgia, serif;
-        font-size: 36px;
-        font-weight: 700;
-        direction: ltr;
-        color: var(--wine);
-        margin: 4px 0;
-      }
-      .date-text-ar {
-        font-size: 15px;
-        color: #8b6873;
-      }
-
-      /* ----------------------------------------------------
-   3. قسم عنوان الصالة (جديد ومميز)
----------------------------------------------------- */
-      .venue-card {
-        margin: 24px 0 18px;
-        padding: 20px 16px;
-        background: #fff8f9;
-        border: 1px solid rgba(197, 160, 100, 0.45);
-        border-radius: 12px;
-        box-shadow: 0 4px 18px rgba(110, 43, 67, 0.05);
-        text-align: center;
-        position: relative;
-      }
-      .venue-card:before {
-        content: "⌖";
+      .love-quote strong {
         display: block;
-        font-size: 20px;
-        color: var(--gold);
-        margin-bottom: 4px;
-      }
-      .venue-badge {
-        font-size: 11px;
-        letter-spacing: 1.5px;
-        color: var(--rose-gold);
-        font-weight: 600;
-        margin-bottom: 6px;
-      }
-      .venue-hall-name {
-        font-family: "Amiri", serif;
-        font-size: 23px;
-        font-weight: 700;
-        color: var(--wine);
-        margin-bottom: 6px;
-      }
-      .venue-address-desc {
-        font-size: 13px;
-        color: #795762;
-        line-height: 1.9;
+        font-family: "Aref Ruqaa", serif;
+        font-size: 1.55rem;
+        color: var(--primary-rose);
         margin-bottom: 12px;
       }
-      .venue-time-badge {
+
+      .event-date {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: var(--primary-rose);
+        border-top: 1px solid rgba(197, 155, 39, 0.35);
+        border-bottom: 1px solid rgba(197, 155, 39, 0.35);
         display: inline-block;
-        padding: 4px 14px;
-        background: #ffffff;
-        border: 1px solid var(--border-gold);
-        border-radius: 50px;
-        font-size: 12px;
-        color: var(--wine);
-        font-weight: 600;
+        padding: 10px 30px;
+        margin: 15px 0;
       }
 
-      /* زر حفظ الموعد بالتقويم */
-      .cal-btn {
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin: 20px 0 10px;
+      }
+
+      .countdown-item {
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(197, 155, 39, 0.25);
+        border-radius: 12px;
+        padding: 10px 14px;
+        min-width: 65px;
+      }
+
+      .countdown-number {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-rose);
+      }
+
+      .countdown-label {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+      }
+
+      .venue-title {
+        font-family: "Aref Ruqaa", serif;
+        font-size: 1.8rem;
+        color: var(--primary-rose);
+        margin-bottom: 8px;
+      }
+
+      .venue-address {
+        font-size: 1.4rem;
+        color: var(--text-dark);
+        font-weight: bold;
+        margin-bottom: 18px;
+      }
+
+      .map-btn {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 12px 26px;
-        margin: 10px 0 18px;
-        border: 1px solid var(--gold);
-        border-radius: 50px;
-        background: #ffffff;
-        color: var(--wine);
-        font-size: 13px;
-        font-weight: 600;
-        cursor: pointer;
-        box-shadow: 0 4px 15px rgba(110, 43, 67, 0.08);
-        transition: transform 0.2s ease;
-      }
-      .cal-btn:active {
-        transform: scale(0.96);
-      }
-
-      /* العداد التنازلي */
-      .countdown-wrap {
-        margin: 18px auto;
-      }
-      .countdown-title {
-        font-size: 12.5px;
-        color: var(--muted);
-        margin-bottom: 10px;
-      }
-      .countdown {
-        display: flex;
-        gap: 7px;
-        justify-content: center;
-      }
-      .timebox {
-        min-width: 64px;
-        padding: 12px 6px 10px;
-        background: #fff8f9;
-        border: 1px solid #ebd4ab;
-        border-radius: 8px;
-      }
-      .timebox strong {
-        display: block;
-        font-family: "Amiri", serif;
-        font-size: 26px;
-        color: var(--wine);
-        line-height: 1;
-      }
-      .timebox span {
-        font-size: 11px;
-        color: #926875;
-      }
-
-      /* ملاحظات الحضور الأنيقة */
-      .notes-tags {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 7px;
-        margin: 20px 0 12px;
-      }
-      .note-pill {
-        padding: 6px 12px;
-        border: 1px solid rgba(197, 160, 100, 0.35);
+        background: linear-gradient(135deg, var(--primary-rose), #7d2e41);
+        color: #ffffff;
+        padding: 13px 30px;
         border-radius: 30px;
-        background: #ffffff;
-        color: var(--wine);
-        font-size: 11.5px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: bold;
+        box-shadow: 0 5px 15px rgba(158, 67, 89, 0.3);
+        transition:
+          transform 0.25s,
+          box-shadow 0.25s;
       }
 
-      /* التذييل */
-      .footer-text {
-        font-size: 14.5px;
-        color: #9f7542;
-        line-height: 2;
-        margin-top: 18px;
-      }
-      .final-heart {
-        display: inline-block;
-        color: var(--rose-gold);
-        font-size: 24px;
-        margin-top: 8px;
-        animation: heartBeat 2s infinite;
+      .map-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 22px rgba(158, 67, 89, 0.4);
       }
 
-      /* زر الموسيقى العائم */
-      .music-btn {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        z-index: 50;
-        border: 1px solid #dfc793;
-        background: var(--wine);
-        color: #fff9ed;
-        border-radius: 50px;
-        padding: 10px 18px;
-        font-family: inherit;
-        font-size: 12px;
-        box-shadow: 0 6px 22px rgba(50, 14, 27, 0.28);
-        display: none;
-        cursor: pointer;
-        transition: transform 0.2s;
+      .map-btn svg {
+        width: 19px;
+        height: 19px;
+        fill: #fff;
       }
-      .music-btn:active {
-        transform: scale(0.96);
-      }
-      .music-btn.show {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
+
+      .final-wish {
+        font-size: 1.25rem;
+        color: var(--primary-rose);
+        font-family: "Aref Ruqaa", serif;
+        line-height: 1.9;
       }
     </style>
   </head>
   <body>
-    <div
-      class="sparkles"
-      id="sparkles"
-      aria-hidden="true"
-    ></div>
-
-    <!-- 1. شاشة البداية مع الفيديو الأصلي (دون أي تغيير بمساراته) -->
-    <section
-      class="video-intro"
-      id="video-intro"
-      aria-label="مقدمة فيديو دعوة الزفاف"
-    >
-      <video
-        class="intro-video"
-        id="intro-video"
-        muted
-        playsinline
-        preload="metadata"
-        poster="img.png"
-      >
-        <source
-          src="inv.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <div class="intro-shade"></div>
-      <div class="intro-content">
-        <p>ليان &amp; جون سينا</p>
-        <button
-          class="open-invite"
-          id="open-invite"
-          type="button"
-        >
-          <span>اضغط لفتح بطاقة الدعوة</span>
-          <span aria-hidden="true">♡</span>
-        </button>
-      </div>
-    </section>
-
-    <!-- الأغنية الأصلية -->
+    <!-- مشغل الموسيقى -->
     <audio
-      id="wedding-music"
-      preload="none"
+      id="romantic-audio"
       loop
+      preload="auto"
     >
       <source
-        src="song.mp3"
-        type="audio/mpeg"
+        src="https://invitations-a8x.pages.dev/demo/amalfi-rose/romantic.mp3"
+        type="audio/mp3"
       />
     </audio>
 
-    <!-- زر التحكم في الصوت -->
-    <button
+    <!-- طبقة تساقط البتلات -->
+    <div id="petal-container"></div>
+
+    <!-- زر كتم / تشغيل الموسيقى -->
+    <div
       class="music-btn"
-      id="musicBtn"
-      type="button"
+      id="music-btn"
+      title="الموسيقى"
     >
-      ♫ إيقاف الموسيقى
-    </button>
-
-    <!-- 2. كارد الدعوة الملكي المباشر (تم حذف الظرف نهائياً) -->
-    <main
-      class="main-wrap"
-      id="mainWrap"
-    >
-      <div class="invitation-card">
-        <div class="top-tag">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيم</div>
-        <div class="ornament">❦ ✧ ❦</div>
-
-        <div class="bismillah">بسم الله، وعلى بركته تبدأ أجمل الحكايات</div>
-
-        <h1 class="heading-story">
-          حكايةُ قلبين…<br />
-          <em>وبدايةُ عمرٍ معًا</em>
-        </h1>
-
-        <p class="poetic-p">
-          بعض اللقاءات لا تكون صدفة… بل هدية جميلة يخبّئها القدر للقلب،<br />
-          حتى يجد نصفه الآخر ويعرف معنى الطمأنينة والسكينة.
-        </p>
-
-        <p class="poetic-p">
-          بكل الحب والفرح، يسعدنا أن نشارككم بداية فصلٍ جديد من حكايتنا،<br />
-          حكاية نختار فيها بعضنا كل يوم، ونكبر فيها معًا بالمودة والرحمة.
-        </p>
-
-        <div class="divider">✧</div>
-
-        <div class="invite-lead">بكل الحب ندعوكم لتشاركونا فرحة زفاف</div>
-
-        <div class="names-wrap">
-          <div class="couple-name">ليان</div>
-          <div class="heart-connector">♡ و ♡</div>
-          <div class="couple-name">جون سينا</div>
-        </div>
-
-        <div class="divider">❦</div>
-
-        <blockquote class="poetic-quote">
-          « ليس أجمل من أن تجد شخصًا يصبح وطنًا لقلبك، ورفيقًا لأيامك، ويدًا
-          تختار أن تمسك بها في كل الفصول. »
-        </blockquote>
-
-        <!-- الموعد والتاريخ -->
-        <div class="date-section">
-          <div class="invite-lead">موعد ليلتنا المباركة</div>
-          <div class="date-highlight">26 · 11 · 2026</div>
-          <div class="date-text-ar">يوم الخميس • ٢٦ نوفمبر ٢٠٢٦</div>
-        </div>
-
-        <!-- قسم عنوان الصالة الجديد (تم وضع عنوان وهمي أنيق يمكنك تعديله بحرية) -->
-        <section
-          class="venue-card"
-          id="venueSection"
-        >
-          <div class="venue-badge">مكان الحفل والاستقبال</div>
-          <div class="venue-hall-name">قاعة الملكية</div>
-          <p class="venue-address-desc">
-            المزرعة، حي الياسمين، <br />
-            دمشق
-          </p>
-          <div class="venue-time-badge">
-            موعد استقبال الضيوف: الساعة 6:00 مساءً
-          </div>
-        </section>
-
-    
-
-        <div class="divider">✧</div>
-
-        <p class="poetic-p">
-          حضوركم يضيف لفرحتنا فرحة، ودعواتكم الطيبة تبقى أثمن هدية لقلوبنا.<br />
-          كونوا جزءًا من يومٍ سنحمله في وجداننا طوال العمر.
-        </p>
-
-        <!-- العداد التنازلي -->
-        <div class="countdown-wrap">
-          <div class="countdown-title">الوقت المتبقي لليلة العمر</div>
-          <div
-            class="countdown"
-            id="countdown"
-          >
-            <div class="timebox">
-              <strong id="cd-days">—</strong><span>يوم</span>
-            </div>
-            <div class="timebox">
-              <strong id="cd-hours">—</strong><span>ساعة</span>
-            </div>
-            <div class="timebox">
-              <strong id="cd-minutes">—</strong><span>دقيقة</span>
-            </div>
-            <div class="timebox">
-              <strong id="cd-seconds">—</strong><span>ثانية</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- همسات ولطافة الحضور -->
-        <div class="notes-tags">
-          <span class="note-pill">ممنوع التصوير حفظاً للخصوصية</span>
-          <span class="note-pill">يرجى تشريفنا بالموعد المحدد</span>
-          <span class="note-pill">حضوركم سر سعادتنا</span>
-        </div>
-
-        <!-- معرض الصور محفوظ كتعليق لتفعيله مستقبلاً براحتك
-    <div class="gallery-section" style="margin-top:20px;">
-      <img src="/images/templates/w024.png" alt="صورة 1" style="width:100%; border-radius:12px; margin-bottom:10px;">
-      <img src="/images/templates/w031.jpeg" alt="صورة 2" style="width:100%; border-radius:12px; margin-bottom:10px;">
-      <img src="/images/templates/w029.png" alt="صورة 3" style="width:100%; border-radius:12px; margin-bottom:10px;">
-      <img src="/images/templates/w019.png" alt="صورة 4" style="width:100%; border-radius:12px;">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"
+        />
+      </svg>
     </div>
-    -->
 
-        <div class="footer-text">
-          بكل الشوق والمحبة… ننتظركم لتكتمل فرحتنا ♡
+    <!-- مؤشر التمرير التلقائي -->
+    <div
+      class="scroll-indicator"
+      id="scroll-indicator"
+    >
+      <span>تمرير تلقائي</span>
+      <span>↓</span>
+    </div>
+
+    <!-- ----------------------------------------------------------------
+         شاشة الظرف الملكي ثلاثي الأبعاد
+    ----------------------------------------------------------------- -->
+    <div id="envelope-stage">
+      <div
+        class="envelope-container"
+        id="envelope"
+      >
+        <!-- البطاقة الداخلية التي تنزلق -->
+        <div class="card-preview">
+          <span
+            style="
+              font-family: &quot;Aref Ruqaa&quot;, serif;
+              color: var(--primary-rose);
+              font-size: 1.2rem;
+            "
+            >دعوة زفاف خاصة</span
+          >
+          <span
+            style="
+              font-family: &quot;Great Vibes&quot;, cursive;
+              color: var(--gold);
+              font-size: 1.8rem;
+            "
+            >Layan & John Cena</span
+          >
         </div>
-        <div class="final-heart">❦</div>
+
+        <!-- أجزاء وطيات الظرف -->
+        <div class="pocket-left"></div>
+        <div class="pocket-right"></div>
+        <div class="pocket-bottom"></div>
+        <div class="flap-top"></div>
+
+        <!-- ختم الشمع الملكي -->
+        <img
+          src="https://invitations-a8x.pages.dev/demo/amalfi-rose/wax-seal.webp"
+          class="wax-seal"
+          alt="ختم الشمع"
+        />
+
+        <!-- العبارة مكتوبة على الظرف نفسه مباشرة -->
+        <div
+          class="on-envelope-text"
+          id="envelope-text"
+        >
+          انقر على الختم لفتح الدعوة الملكية
+        </div>
       </div>
+    </div>
+
+    <!-- محتوى البطاقة الكامل -->
+    <main class="main-container">
+      <!-- القسم 1: البداية والأسماء (مع overflow: hidden) -->
+      <section class="card-box hero-card">
+        <!-- <img
+          src="https://invitations-a8x.pages.dev/demo/amalfi-rose/florals/rose-cluster.png"
+          class="floral-corner top-right"
+          alt="ورد"
+        />
+        <img
+          src="https://invitations-a8x.pages.dev/demo/amalfi-rose/florals/rose-cluster.png"
+          class="floral-corner bottom-left"
+          alt="ورد"
+        /> -->
+
+        <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+        <p
+          style="
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            font-style: italic;
+            line-height: 1.9;
+          "
+        >
+          "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا
+          لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"
+        </p>
+
+        <div class="divider"></div>
+
+        <p style="font-size: 1.2rem; color: var(--text-muted)">
+          يسرّنا ويشرّفنا دعوتكم لحضور حفل زفاف
+        </p>
+
+        <div class="names-box">
+          <div class="name">جون سينا</div>
+          <span class="and-symbol">&</span>
+          <div class="name">ليان</div>
+        </div>
+
+        <p
+          style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.8"
+        >
+          فرحتنا لا تكتمل إلا بمشاركتكم لنا أرق اللحظات وأعذبها،<br />لتنيروا
+          معنا ليلة من أبهى ليالي العمر.
+        </p>
+      </section>
+
+      <!-- القسم 2: عبارات المشاعر الوجدانية -->
+      <section class="card-box">
+        <img
+          src="https://invitations-a8x.pages.dev/demo/amalfi-rose/florals/rose-small.png"
+          class="small-rose"
+          alt="وردة"
+        />
+        <div class="love-quote">
+          <strong>عهدُ الوفاء ونبضُ القلوب</strong>
+          "حينما تلاقت الأرواح قبل الأيدي، كُتبت لحكايتنا بداية لا تنتهي.<br />
+          نخطو اليوم نحو الغد بقلبين يفيضان حباً وأملاً، ويسعدنا أن تشهدوا عهدنا
+          وتشاركونا بهجة اللقاء، فبكم تزدان أيامنا وبدعواتكم يبارك الله خطانا."
+        </div>
+        <div class="divider"></div>
+        <p style="color: var(--gold); font-size: 1.1rem; font-style: italic">
+          أهلاً بكم في واحة فرحنا وسرورنا
+        </p>
+      </section>
+
+      <!-- القسم 3: الموعد والعداد -->
+      <section class="card-box">
+        <h3
+          style="
+            font-family: &quot;Aref Ruqaa&quot;, serif;
+            font-size: 1.7rem;
+            color: var(--primary-rose);
+          "
+        >
+          الموعد والزمان
+        </h3>
+        <div class="event-date">الخميس، 26 نوفمبر 2026</div>
+        <p
+          style="
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+          "
+        >
+          في تمام الساعة الثامنة مساءً
+        </p>
+
+        <div class="countdown">
+          <div class="countdown-item">
+            <div
+              class="countdown-number"
+              id="days"
+            >
+              00
+            </div>
+            <div class="countdown-label">أيام</div>
+          </div>
+          <div class="countdown-item">
+            <div
+              class="countdown-number"
+              id="hours"
+            >
+              00
+            </div>
+            <div class="countdown-label">ساعات</div>
+          </div>
+          <div class="countdown-item">
+            <div
+              class="countdown-number"
+              id="minutes"
+            >
+              00
+            </div>
+            <div class="countdown-label">دقائق</div>
+          </div>
+          <div class="countdown-item">
+            <div
+              class="countdown-number"
+              id="seconds"
+            >
+              00
+            </div>
+            <div class="countdown-label">ثوانٍ</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- القسم 4: المكان وزر الخريطة والخاتمة -->
+      <section class="card-box">
+        <div class="venue-title">مكان الحفل</div>
+        <div class="venue-address">دمشق - صالة WWE</div>
+
+        <p
+          style="
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+          "
+        >
+          نتشرف بوجودكم وحضوركم العطر الذي يملأ القلوب سعادة
+        </p>
+
+        <!-- زر الخريطة -->
+        <a
+          href="https://maps.google.com"
+          target="_blank"
+          class="map-btn"
+        >
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+            />
+          </svg>
+          <span>عرض الموقع على الخريطة</span>
+        </a>
+
+        <div class="divider"></div>
+
+        <!-- عبارة النهاية -->
+        <div class="final-wish">
+          نسأل الله لهما حياة زوجية هانئة وحملة سعيدة مليئة بالحب والبركة ✨<br />
+          ودامت دياركم عامرة بالأفراح والمسرات
+        </div>
+      </section>
     </main>
 
     <script>
-      (() => {
-        "use strict";
+      // مصفوفة البتلات الستة
+      const petalImages = [
+        "https://invitations-a8x.pages.dev/demo/amalfi-rose/florals/rain/petal-1.png",
+        "https://invitations-a8x.pages.dev/demo/amalfi-rose/florals/rain/petal-2.png",
+        "https://invitations-a8x.pages.dev/demo/amalfi-rose/florals/rain/petal-3.png",
+        "https://invitations-a8x.pages.dev/demo/amalfi-rose/florals/rain/petal-4.png",
+        "https://invitations-a8x.pages.dev/demo/amalfi-rose/florals/rain/petal-5.png",
+        "https://invitations-a8x.pages.dev/demo/amalfi-rose/florals/rain/petal-6.png",
+      ];
 
-        const intro = document.getElementById("video-intro");
-        const introVideo = document.getElementById("intro-video");
-        const music = document.getElementById("wedding-music");
-        const openInviteButton = document.getElementById("open-invite");
-        const mainWrap = document.getElementById("mainWrap");
-        const musicBtn = document.getElementById("musicBtn");
+      const petalContainer = document.getElementById("petal-container");
+      const audio = document.getElementById("romantic-audio");
+      const musicBtn = document.getElementById("music-btn");
+      const envelopeStage = document.getElementById("envelope-stage");
+      const envelope = document.getElementById("envelope");
+      const envelopeText = document.getElementById("envelope-text");
+      const scrollIndicator = document.getElementById("scroll-indicator");
+      const cardBoxes = document.querySelectorAll(".card-box");
 
-        let experienceStarted = false;
+      let rainInterval = null;
+      let autoScrollInterval = null;
+      let isAutoScrolling = false;
 
-        // 1. بدء تشغيل الفيديو والأغنية
-        function startExperience() {
-          if (experienceStarted) return;
-          experienceStarted = true;
+      // توليد البتلات
+      function spawnPetal() {
+        const petal = document.createElement("div");
+        petal.className = "petal";
+        const randomImg =
+          petalImages[Math.floor(Math.random() * petalImages.length)];
+        petal.style.backgroundImage = `url('${randomImg}')`;
 
-          document.querySelector(".intro-content").classList.add("is-hidden");
+        const startX = Math.random() * window.innerWidth;
+        const size = Math.random() * 22 + 20;
+        const duration = Math.random() * 5 + 6.5;
 
-          introVideo.muted = true;
-          const playVid = introVideo.play();
-          if (playVid && typeof playVid.catch === "function") {
-            playVid.catch(() => {
-              experienceStarted = false;
-              document
-                .querySelector(".intro-content")
-                .classList.remove("is-hidden");
-            });
-          }
+        petal.style.left = `${startX}px`;
+        petal.style.width = `${size}px`;
+        petal.style.height = `${size}px`;
+        petal.style.animationDuration = `${duration}s`;
 
-          music.volume = 0.75;
-          music
-            .play()
-            .then(() => {
-              musicBtn.classList.add("show");
-            })
-            .catch(() => {
-              musicBtn.classList.add("show");
-              musicBtn.textContent = "♫ تشغيل الموسيقى";
-            });
-        }
+        petalContainer.appendChild(petal);
 
-        // 2. تفعيل خاصية الـ Auto Scroll التلقائي الناعم
-        let autoScrollTimer = null;
-        function startAutoScroll() {
-          // مهلة بسيطة ليقرأ المستخدم بداية الدعوة أولاً
-          setTimeout(() => {
-            autoScrollTimer = setInterval(() => {
-              if (
-                window.innerHeight + window.scrollY >=
-                document.body.offsetHeight - 10
-              ) {
-                clearInterval(autoScrollTimer);
-              } else {
-                window.scrollBy({ top: 1, behavior: "instant" });
-              }
-            }, 26);
-          }, 1400);
-        }
+        setTimeout(() => {
+          petal.remove();
+        }, duration * 1000);
+      }
 
-        // إيقاف النزول التلقائي فور لمس الشاشة بيد المستخدم
-        const cancelAutoScroll = () => {
-          if (autoScrollTimer) {
-            clearInterval(autoScrollTimer);
-            autoScrollTimer = null;
-          }
-        };
-        window.addEventListener("touchstart", cancelAutoScroll, {
-          passive: true,
-        });
-        window.addEventListener("wheel", cancelAutoScroll, { passive: true });
-        window.addEventListener("mousedown", cancelAutoScroll, {
-          passive: true,
-        });
-
-        // 3. الانتقال المباشر للكارد فور انتهاء الفيديو
-        function revealDirectCard() {
-          intro.classList.add("is-hidden");
-          mainWrap.classList.add("is-visible");
-          startAutoScroll();
-        }
-
-        introVideo.addEventListener("ended", revealDirectCard, { once: true });
-        openInviteButton.addEventListener("click", (e) => {
-          e.stopPropagation();
-          startExperience();
-        });
-
-        // 4. التحكم بالموسيقى
-        musicBtn.addEventListener("click", () => {
-          if (music.paused) {
-            music
-              .play()
-              .then(() => {
-                musicBtn.textContent = "♫ إيقاف الموسيقى";
-              })
-              .catch(() => {});
-          } else {
-            music.pause();
-            musicBtn.textContent = "♫ تشغيل الموسيقى";
-          }
-        });
-
-        // 5. بريق الشرارات الذهبية بالخلفية
-        const sparkleBox = document.getElementById("sparkles");
-        for (let i = 0; i < 22; i++) {
-          const s = document.createElement("i");
-          s.style.left = Math.random() * 100 + "%";
-          s.style.animationDelay = Math.random() * 8 + "s";
-          s.style.animationDuration = 7 + Math.random() * 7 + "s";
-          sparkleBox.appendChild(s);
-        }
-
-        // 6. العداد التنازلي لموعد 26/11/2026
-        const targetDate = new Date("2026-11-26T18:00:00+03:00");
-        const dEl = document.getElementById("cd-days");
-        const hEl = document.getElementById("cd-hours");
-        const mEl = document.getElementById("cd-minutes");
-        const sEl = document.getElementById("cd-seconds");
-        const pad = (n) => String(n).padStart(2, "0");
-
-        function updateCountdown() {
-          const diff = Math.max(0, targetDate.getTime() - Date.now());
-          const totalSecs = Math.floor(diff / 1000);
-          dEl.textContent = String(Math.floor(totalSecs / 86400));
-          hEl.textContent = pad(Math.floor((totalSecs % 86400) / 3600));
-          mEl.textContent = pad(Math.floor((totalSecs % 3600) / 60));
-          sEl.textContent = pad(totalSecs % 60);
-        }
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-
-        // 7. حفظ الموعد في التقويم (.ics)
-        document.getElementById("saveDateBtn").addEventListener("click", () => {
-          const icsData = [
-            "BEGIN:VCALENDAR",
-            "VERSION:2.0",
-            "PRODID:-//Wedding Invitation//AR",
-            "CALSCALE:GREGORIAN",
-            "BEGIN:VEVENT",
-            "UID:wedding-lian-johncena-20261126@invitation.com",
-            "DTSTAMP:20261101T000000Z",
-            "DTSTART:20261126T150000Z",
-            "DTEND:20261126T190000Z",
-            "SUMMARY:حفل زفاف ليان وجون سينا",
-            "LOCATION:قاعة ريتز كراون الملكية، الرياض",
-            "DESCRIPTION:دعوة لحفل زفاف ليان وجون سينا",
-            "END:VEVENT",
-            "END:VCALENDAR",
-          ].join("\r\n");
-
-          const blob = new Blob([icsData], {
-            type: "text/calendar;charset=utf-8",
+      // مراقبة التمرير للظهور التدريجي
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
           });
-          const url = URL.createObjectURL(blob);
-          const link = document.createElement("a");
-          link.href = url;
-          link.download = "wedding-lian-johncena.ics";
-          document.body.appendChild(link);
-          link.click();
-          link.remove();
-          setTimeout(() => URL.revokeObjectURL(url), 1000);
-        });
-      })();
+        },
+        { threshold: 0.15 },
+      );
+
+      cardBoxes.forEach((box) => observer.observe(box));
+
+      // محرك التمرير التلقائي
+      function startAutoScroll() {
+        isAutoScrolling = true;
+        scrollIndicator.classList.add("active");
+
+        autoScrollInterval = setInterval(() => {
+          const maxScroll =
+            document.documentElement.scrollHeight - window.innerHeight;
+          if (window.scrollY >= maxScroll - 3) {
+            stopAutoScroll();
+          } else {
+            window.scrollBy({ top: 1.2, behavior: "auto" });
+          }
+        }, 25);
+      }
+
+      function stopAutoScroll() {
+        if (isAutoScrolling) {
+          isAutoScrolling = false;
+          clearInterval(autoScrollInterval);
+          scrollIndicator.classList.remove("active");
+        }
+      }
+
+      window.addEventListener("touchstart", stopAutoScroll, { passive: true });
+      window.addEventListener("wheel", stopAutoScroll, { passive: true });
+      window.addEventListener("mousedown", stopAutoScroll, { passive: true });
+
+      // تفاعل فتح الظرف
+      envelope.addEventListener("click", () => {
+        // إخفاء النص والختم فوراً وتفعيل أنيميشن فتح الظرف
+        if (envelopeText) envelopeText.style.display = "none";
+        envelope.classList.add("open");
+
+        // تشغيل الموسيقى
+        audio
+          .play()
+          .then(() => {
+            musicBtn.classList.add("playing");
+          })
+          .catch((e) => console.log("Autoplay handled", e));
+
+        // الانتقال إلى البطاقة بعد انتهاء خروج الرسالة من الظرف
+        setTimeout(() => {
+          envelopeStage.classList.add("fade-out");
+
+          if (!rainInterval) {
+            for (let i = 0; i < 7; i++) spawnPetal();
+            rainInterval = setInterval(spawnPetal, 420);
+          }
+
+          if (cardBoxes.length > 0) cardBoxes[0].classList.add("show");
+
+          setTimeout(startAutoScroll, 2000);
+        }, 1300);
+      });
+
+      // زر الموسيقى
+      musicBtn.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play();
+          musicBtn.classList.add("playing");
+        } else {
+          audio.pause();
+          musicBtn.classList.remove("playing");
+        }
+      });
+
+      // العداد التنازلي لـ 26 نوفمبر 2026
+      const weddingDate = new Date("November 26, 2026 20:00:00").getTime();
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const diff = weddingDate - now;
+
+        if (diff > 0) {
+          const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const h = Math.floor(
+            (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          );
+          const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+          const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+          document.getElementById("days").innerText = d < 10 ? "0" + d : d;
+          document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
+          document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
+          document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
+        }
+      }
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
     </script>
   </body>
 </html>
